@@ -28,8 +28,8 @@ public void ConfigureAppium() throws MalformedURLException
 		options.setDeviceName("UniverseEmulator");
 		options.setChromedriverExecutable("C:\\SeleniumWebDriver\\chromedriver.exe");
 		//options.setApp("C:\\Users\\sridh\\eclipse-workspace\\AppiumMobileAuto1\\src\\test\\java\\Utilities\\ApiDemos-debug (2).apk");
-		options.setApp("C:\\Users\\sridh\\eclipse-workspace\\AppiumMobileAuto1\\src\\test\\java\\Utilities\\General-Store.apk");
-		
+		options.setApp("C:\\APK Files\\General-Store.apk");
+		//options.setPlatformName("Android");
 		
 	 driver = new AndroidDriver(new URL( "http://127.0.0.1:4723"),options);
 	 formPage = new FormPage(driver);
@@ -69,10 +69,10 @@ public void ConfigureAppium() throws MalformedURLException
 		Double price = Double.parseDouble((amt).substring(1));
 		return price;
 	}
-	@AfterClass
-	public void tearDown()
-	{
-		driver.close();
-		driver.quit();
-	}
+//	@AfterClass
+//	public void tearDown()
+//	{
+//		//driver.close();
+//		driver.quit();
+//	}
 }

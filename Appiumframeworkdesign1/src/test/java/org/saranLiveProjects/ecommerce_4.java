@@ -9,8 +9,13 @@ import org.saranLiveProjects.pageObjects.android.CartPage;
 import org.saranLiveProjects.pageObjects.android.FormPage;
 import org.saranLiveProjects.pageObjects.android.ProductCatalogue;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import io.appium.java_client.android.Activity;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 
 public class ecommerce_4 extends  BaseClass{
 	@Test(dataProvider="getData")
@@ -20,8 +25,8 @@ public class ecommerce_4 extends  BaseClass{
 			
 			formPage.setNameField(name);
 			formPage.setGender(gender);
-			//formPage.setCountryOption(country);
-			Assert.assertEquals(false, true);
+			formPage.setCountryOption(country);
+			//Assert.assertEquals(false, true);
 			ProductCatalogue productCatalogue =formPage.submitForm();
 			productCatalogue.addItemToCart(0);
 		productCatalogue.addItemToCart(0);
@@ -39,6 +44,7 @@ public class ecommerce_4 extends  BaseClass{
 		Thread.sleep(2000);
 		cartPage.acceptTermsConditions();
 		cartPage.submitOrder();
+		driver.pressKey(new KeyEvent(AndroidKey.BACK));
 		
 		}
 //		@BeforeMethod
@@ -47,11 +53,11 @@ public class ecommerce_4 extends  BaseClass{
 //			Activity activity = new Activity ("com.androidsample.generalstore", "com.androidsample.generalstore.SplashActivity");
 //			 driver.startActivity(activity);
 //		}
-		
+//		
 		@DataProvider
 		public Object[][] getData()
 		{
-			return new Object[][] {{"Saranya","female","Algeria"}};
+			return new Object[][] {{"Saranya","female","Algeria"},{"Donald","male","Algeria"}};
 		}
 		
 		

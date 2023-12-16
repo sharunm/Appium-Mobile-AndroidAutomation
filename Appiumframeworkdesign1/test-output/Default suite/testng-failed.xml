@@ -3,14 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="org.saranLiveProjects.eCommerce_tc_4_Hybrid">
+      <class name="org.saranLiveProjects.ecommerce_4">
         <methods>
-          <include name="FillForm"/>
-          <include name="tearDown"/>
-          <include name="preSetup"/>
+          <include name="FillForm" invocation-numbers="1"/>
           <include name="ConfigureAppium"/>
         </methods>
-      </class> <!-- org.saranLiveProjects.eCommerce_tc_4_Hybrid -->
+      </class> <!-- org.saranLiveProjects.ecommerce_4 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
